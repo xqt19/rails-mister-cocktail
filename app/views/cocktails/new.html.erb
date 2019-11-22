@@ -1,2 +1,12 @@
-<h1>Cocktails#new</h1>
-<p>Find me in app/views/cocktails/new.html.erb</p>
+<br>
+<div class="d-flex justify-content-center">
+    <h1>Create a new cocktail</h1>
+</div>
+<br><br>
+<div class="d-flex justify-content-center">
+    <%= render "form", cocktail: @cocktail %>
+</div>
+<br><br>
+<div class="d-flex justify-content-center">
+    <%= link_to "Back to Home", root_path  %>
+</div>

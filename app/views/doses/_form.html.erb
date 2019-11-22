@@ -1,0 +1,9 @@
+<div class = "d-flex justify-content-center">
+<%= simple_form_for [cocktail, dose] do |f| %>
+    <%= f.input :description %>
+    <%= f.association :ingredient %>
+    <div class = "d-flex justify-content-center">
+    <%= f.button :submit, class: "btn btn-primary" %>
+  </div>
+<% end %>
+</div>

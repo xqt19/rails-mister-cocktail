@@ -1,2 +1,31 @@
-<h1>Cocktails#show</h1>
-<p>Find me in app/views/cocktails/show.html.erb</p>
+<div style="border: solid black 1px" class ="mx-5 p-5">
+<div class="d-flex justify-content-center mt-3">
+    <h1><%= @cocktail.name %></h1>
+</div>
+<br>
+<div class="d-flex justify-content-center">
+    <img src="http://source.unsplash.com/100x100">
+</div>
+<br>
+<div class="d-flex justify-content-center">
+    <u><strong>Current Doses</strong></u>
+</div>
+<div class="d-flex justify-content-center">
+    <ul>
+    <% @cocktail.doses.all.each do |dose| %>
+    <li><%= dose.description %> of <%= dose.ingredient.name %></li>
+    <% end %>
+  </ul>
+</div>
+<br>
+<div class="d-flex justify-content-center">
+    <%= link_to "Add a dose ", new_cocktail_dose_path(@cocktail.id)  %>
+</div>
+<div class="d-flex justify-content-center">
+    <%= link_to "Delete this cocktail ", cocktail_path(@cocktail), method: :delete, class:"btn btn-danger"  %>
+</div>
+</div>
+<br>
+<div class="d-flex justify-content-center">
+    <%= link_to "Back to Home", root_path , class:"btn btn-primary" %>
+</div>

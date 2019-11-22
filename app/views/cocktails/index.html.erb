@@ -1,2 +1,21 @@
-<h1>Cocktails#index</h1>
-<p>Find me in app/views/cocktails/index.html.erb</p>
+<div class="d-flex justify-content-center">
+    <h1>All Cocktails</h1>
+</div>
+<br>
+<div class="d-flex justify-content-center">
+    <%= link_to "Create New", new_cocktail_path, class: "btn btn-primary" %>
+</div>
+<br>
+<div class="row d-flex justify-content-center">
+<% @cocktails.each do |cocktail| %>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= cocktail.name %></h5>
+    <h6 class="card-subtitle mb-2 text-muted"><%= cocktail.ingredients.all.length %> Ingredients</h6>
+    <%= link_to "See More", cocktail_path(cocktail), class: "btn btn-success" %>
+    <%= link_to "Delete", cocktail_path(cocktail), method: :delete, class: "btn btn-danger" %>
+  </div>
+</div>
+<% end %>
+</div>
+
